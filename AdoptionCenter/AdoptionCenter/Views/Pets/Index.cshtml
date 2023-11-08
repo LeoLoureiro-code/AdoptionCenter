@@ -1,0 +1,72 @@
+﻿@model Pet
+@using AdoptionCenterWebsite.DataAccess.EF.Models
+
+@{ 
+    ViewData["Title"] = "Pets Page";
+}
+
+<script type="text/javascript">
+    function openLocation(url) {
+        window.location.href = url;
+    }
+
+    function confirmDelete(id) {
+        $("#hdnDeleteAccountId").val(id);
+        openModal("deleteModal");
+    }
+
+    function cancelDelete() {
+        $("#hdnDeleteAccountId").val(0);
+        closeModal("deleteModal");
+    }
+
+    function deleteAccount() {
+        var id = $("#hdnDeleteAccountId").val();
+        window.location.href = "/Banking/Delete/" + id;
+    }
+</script>
+
+<div class="pets-div">
+    <h1 class="pets-h1">Your best friend is waiting for you</h1>
+
+
+
+    <button type="button" onclick="javascript:openLocation('/Pets/GiveUpForAdoption')" class="btn">Give up for adoption</button>
+
+    <!-- Pet information-->
+    <div class="pet-div">
+
+        @foreach (Pet pet in ){
+        <div class="pet-img-div">
+            <img src="./css/Assets/dog3.jpg" class="pet-img"/>
+        </div>
+        
+        <div class="pet-info">
+            <h2 class="pet-name">PetName</h2>
+            <ol class="pet-list">
+                <li class="pet-list-item">
+                    <div class="pet-list-div">
+                        <p class="pet-name"></p>
+                    </div>
+                </li>
+                <li class="pet-list-item">
+                    <div class="pet-list-div">
+                        <p class="pet-breed"></p>
+                    </div>
+                </li>
+                <li class="pet-list-item">
+                    <div class="pet-list-div">
+                        <p class="pet-age"></p>
+                    </div>
+                </li>
+                <li class="pet-list-item">
+                    <div class="pet-list-div">
+                        <p class="pet-desc"></p>
+                    </div>
+                </li>
+            </ol>
+            <button>Adopt Me</button>
+        </div>
+        }
+    </div>
+</div>

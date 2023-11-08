@@ -1,0 +1,14 @@
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\bin\Debug\net7.0\AdoptionCenter.DataAccess.EF.deps.json
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\bin\Debug\net7.0\AdoptionCenter.DataAccess.EF.runtimeconfig.json
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\bin\Debug\net7.0\AdoptionCenter.DataAccess.EF.dll
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\bin\Debug\net7.0\AdoptionCenter.DataAccess.EF.pdb
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.csproj.AssemblyReference.cache
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.AssemblyInfoInputs.cache
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.AssemblyInfo.cs
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.csproj.CoreCompileInputs.cache
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.dll
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\refint\AdoptionCenter.DataAccess.EF.dll
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.pdb
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\AdoptionCenter.DataAccess.EF.genruntimeconfig.cache
+C:\Users\leo_e\OneDrive\Documents\C#\AdoptionCenter\AdoptionCenter.DataAccess.EF\obj\Debug\net7.0\ref\AdoptionCenter.DataAccess.EF.dll
