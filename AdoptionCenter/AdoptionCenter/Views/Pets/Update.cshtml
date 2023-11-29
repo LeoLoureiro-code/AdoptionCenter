@@ -1,0 +1,52 @@
+﻿@model PetsViewModel
+@using AdoptionCenter.DataAccess.EF.Models
+
+@{
+
+    ViewData["Title"] = "Pets Page";
+}
+
+<form action="~/Pets/Index" method="post">
+    <div>
+        <div class="row modal-h1-div">
+            <div class="col-6 offset-3 text-center">
+                <h1 class="display-4" style="margin: 20px 0px;">Let us help you</h1>
+            </div>
+        </div>
+        <div class="form-row ">
+            <div class="col-md-6 offset-md-3 form-group update-form">
+                <label>Pet Name: </label>
+                <input type="text" class="form-control contact-input input-update" name="petname" value="@Model.CurrentPet.PetName" />
+            </div>
+            <div class="form-row update-form">
+                <div class="col-md-6 offset-md-3 form-group">
+                <label>Pet Breed: </label>
+                    <input type="text" class="form-control contact-input input-update" name="petbreed" value="@Model.CurrentPet.PetBreed" />
+                </div>
+            </div>
+            <div class="form-row update-form">
+                <div class="col-md-6 offset-md-3 form-group">
+                    <label>Pet Age: </label>
+                    <input type="tel" class="form-control contact-input input-update" name="petage" value="@Model.CurrentPet.PetAge" />
+                </div>
+            </div>
+            <div class="form-row update-form">
+                <div class="col-md-6 offset-md-3 form-group">
+                    <label>Pet Description: </label>
+                    <input type="tel" class="form-control contact-input input-update" name="petdesc" value="@Model.CurrentPet.PetDesc" />
+                </div>
+            </div>
+            <div class="form-row update-form">
+                <div class="col-md-6 offset-md-3">
+                    <button type="button" class="page-btn-update" onclick="location.href = '/Pets/Index'">CANCEL</button>
+                    <button type="submit" class="page-btn-update">ADD</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <input type="hidden" name="PetId" value="@Model.CurrentPet.PetId" />
+</form>
+
+            
+ 

@@ -14,9 +14,9 @@
     box-sizing: border-box;
 }
 
-.container {
-    margin: 0;
-    padding: 0;
+main{
+    padding: 0 0 0rem 0;
+ 
 }
 
 html {
@@ -35,13 +35,36 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
     font-family: var(--typography)
 }
 
-/*HOME PAGE*/
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background-color: red;
+    color: white;
+    padding: 2rem;
+    text-align: left;
+    clear: both;
+}
 
+buttons-div-modal{
+    display: flex;
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: center;
+}
+
+
+/*HOME PAGE*/
 /*Navbar*/
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
 
 .navbar {
     position: fixed;
@@ -154,14 +177,17 @@ body {
 
 .pets-div {
     padding: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .pets-h1 {
+    padding-top: 5rem;
     text-align: center;
-    font-weight: 700;
     font-size: 3.5rem;
     font-family: var(--typography);
-    color: var(--text);
+    color: var(--title);
 }
 
 .pet-info {
@@ -170,32 +196,113 @@ body {
 
 .pet-name {
     font-size: 1.5rem;
+    font-weight: 700;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .pet-list {
-    list-style-type: none;
+    list-style-type:disc;
+    width: 100%;
 }
 
 .pet-div {
-    height: 400px;
-    width: 250px;
-    background-color: aqua;
+    height: 18.75rem;
+    min-width: 25rem;
+    max-width: 25rem;
+    box-shadow: 1px 3px 10px;
+    display: flex;
+    border-radius: 10px;
+    margin: 0 0 3rem 3rem;
+}
+
+.pet-img-div > img {
+    position:absolute;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.pet-img-div{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pet-info {
+    width: 100%;
+    font-family: var(--typography);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 }
 
 .pet-img {
     width: 100%;
     height: 100%;
-    ;
 }
+
+.buttons-div{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.pet-btn {
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--title);
+    height: 2.5rem;
+    width: 4rem;
+    color: var(--button-text);
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.pet-btn:hover {
+    background-color: #e4d5c6;
+    color: var(--title);
+    transition: 0.8s ease-in-out;
+}
+
+.anchor-give {
+    
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 120px;
+    position: fixed;
+    left: 80%;
+    bottom: 70%;
+    text-align: center;
+    background-color: var(--title);
+    color: var(--button-text);
+    transition: 0.8s;
+    border: none;
+    outline: none;
+}
+
+.anchor-give:hover {
+    background-color: var(--main-bg-color);
+    color: var(--title);
+}
+
 
 /*CONTACT PAGE*/
 .contact-div {
-    height: 100vh;
-    padding: 0rem 5rem 0rem 5rem;
-    display: flex;
+  display: flex;
+  padding-bottom: 7rem;
 }
 
 .contact-info {
@@ -210,7 +317,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15rem;
 }
 
     .contact-img > img {
@@ -225,12 +331,12 @@ body {
 
 .contact-h1 {
     color: var(--text);
-    font-size: 3.5rem;
     font-weight: 500;
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);
+    padding-top: 4rem;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: var(--typography);
+    color: var(--title);
 }
 
 .contact-form {
@@ -242,7 +348,7 @@ body {
     flex-direction: column;
     background-color: var(--main-bg-color);
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-around;
     border-radius: 15px;
 }
 
@@ -252,7 +358,7 @@ body {
 
 .contact-label {
     display: block;
-    margin: 1rem 0 0.5rem 0;
+    margin: 0rem 0 0rem 0;
 }
 
 .contact-input {
@@ -270,7 +376,48 @@ body {
     border-radius: 15px;
     outline: none;
     width: 100%;
+    height: 150px;
     border: none;
+}
+
+.message-div{
+    height: 150px;
+    width: 300px;
+    background-color: var(--title-hover);
+    position: absolute;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: emailSent;
+    animation-duration: 6s;
+    border-radius: 20px;
+}
+
+.message-p {
+    color: var(--button-text);
+    font-family: var(--typography);
+    font-size: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+@keyframes emailSent {
+    from{
+        right:-50%;
+        bottom: 20%;
+    }
+
+    50%{
+        right: 30%;
+        bottom: 20%;
+
+    }
+
+    to {
+        right: -50%;
+        bottom: 20%;
+    }
 }
 
 /*ABOUT PAGE*/
@@ -278,32 +425,263 @@ body {
 .about-div {
     width: 100%;
     height: 100vh;
-    padding: 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .about-info {
-    width: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-h1 {
     color: var(--title);
     font-family: var(--typography);
-    font-size: 5rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
+}
+.about-h2{
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+
+.about-h2-anchor{
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+..about-h2-ancho:hover{
+    color: var(--title);
 }
 
 .about-paragraph {
     font-family: var(--typography);
     font-size: 1.2rem;
-    line-height: 3rem;
+    text-align:center;
+    margin-bottom: 2rem;
 }
 
 .about-img {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/*Update*/
+
+.buttons-div-modal{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.pet-btn-modal{
+    margin: 1rem 0 0 1rem;
+}
+
+.update-form {
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.input-update {
+    border: 2px solid var(--main-bg-color);
+}
+
+.page-btn-update {
+    width: 5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: var(--title);
+    border-radius: 10px;
+    font-weight: 700;
+    color: var(--background);
+    transition: 0.8s ease-in-out;
+}
+
+.page-btn-update:hover{
+    background-color: var(--main-bg-color);
+    color: var(--title)
+}
+
+
+.modal-h1-div {
+    padding-top: 5rem;
+}
+
+/*Media queries*/
+/*Laptop*/
+@media screen and (max-width: 1250px) {
+    /*Hero*/
+
+    .hero {
+        flex-direction: column;
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .hero-info {
+        width: 100%;
+    }
+
+    .img-div {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+        .img-div > img {
+            position: absolute;
+            bottom:0;
+        }
+
+        /*Pets*/
+
+    .pets-div{
+        padding: 5rem;
+    }
+
+    .anchor-give{
+        height: 5rem;
+        width: 7rem;
+        font-size: 0.8rem;
+        border-radius: 15px;
+    }
+
+
+    /*About*/
+    .about-div {
+        flex-direction: column;
+        clear: both;
+    }
+
+    .about-h1 {
+
+        font-size: 3rem;
+    }
+
+    .about-h2 {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .about-info{
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .about-paragraph {
+        font-family: var(--typography);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        
+    }
+
+    .about-img {
+        display: none;
+    }
+
+
+    /*Contact*/
+
+    .contact-div {
+        flex-direction: column-reverse;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-img {
+        display: none;
+    }
+
+}
+
+
+
+/*Mobile/Tablet*/
+@media screen and (max-width: 750px) {
+    /*Hero*/
+
+    .hero {
+            flex-direction: column;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .hero-info {
+            width: 100%;
+        }
+
+        .img-div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .img-div > img {
+                width: 100%;
+            }
+
+
+        /*Pets*/
+
+        .anchor-give {
+            height: 5rem;
+            width: 7rem;
+            font-size: 0.8rem;
+            border-radius: 15px;
+          
+        }
+
+        /*About*/
+        .about-h1 {
+           text-align: center;
+        }
+
+        /*Contact*/
+
+        .contact-info{
+            width: 100%;
+        }
+
+        .contact-img{
+            width: 100%;
+        }
+    }
+
+    /*Navbar*/
+
+@media screen and (max-width: 575px) {
+    .navbar-nav{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background);
+    }
+
+    .nav-item {
+        border-left: 1px solid var(--title);
+        border-right: 1px solid var(--title);
+        border-top: 1px solid var(--title);
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact {
+        border-bottom: 1px solid var(--title);
+    }
 }

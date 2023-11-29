@@ -1,8 +1,27 @@
+using AdoptionCenter.DataAccess.EF.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+IConfiguration configuration = new ConfigurationBuilder()
 
+        .AddJsonFile("appsettings.json")
+
+        .AddEnvironmentVariables().Build();
+
+builder.Services.AddDbContext<AdoptionWebsiteContext>(
+
+    optionsAction =>
+
+    {
+
+        optionsAction.UseSqlServer(configuration.GetConnectionString(name: "DefaultConnection"));
+
+    }
+
+);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

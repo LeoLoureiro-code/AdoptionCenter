@@ -1053,6 +1053,19 @@
             "rid": "win"
           }
         }
+      },
+      "AdoptionCenter.DataAccess.EF/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13"
+        },
+        "compile": {
+          "bin/placeholder/AdoptionCenter.DataAccess.EF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AdoptionCenter.DataAccess.EF.dll": {}
+        }
       }
     }
   },
@@ -2875,10 +2888,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "AdoptionCenter.DataAccess.EF/1.0.0": {
+      "type": "project",
+      "path": "../AdoptionCenter.DataAccess.EF/AdoptionCenter.DataAccess.EF.csproj",
+      "msbuildProject": "../AdoptionCenter.DataAccess.EF/AdoptionCenter.DataAccess.EF.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AdoptionCenter.DataAccess.EF >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13"
     ]
@@ -2909,7 +2928,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\leo_e\\Source\\Repos\\LeoLoureiro-code\\AdoptionCenter\\AdoptionCenter\\AdoptionCenter.DataAccess.EF\\AdoptionCenter.DataAccess.EF.csproj": {
+              "projectPath": "C:\\Users\\leo_e\\Source\\Repos\\LeoLoureiro-code\\AdoptionCenter\\AdoptionCenter\\AdoptionCenter.DataAccess.EF\\AdoptionCenter.DataAccess.EF.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

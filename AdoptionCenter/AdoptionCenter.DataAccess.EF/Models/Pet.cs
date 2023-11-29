@@ -5,7 +5,7 @@ namespace AdoptionCenter.DataAccess.EF.Models;
 
 public partial class Pet
 {
-    public Pet(int petId, string petName, string petBreed, int petAge, string petDesc, string petImage)
+    public Pet(int petId, string petName, string petBreed, int petAge, string petDesc)
     {
         PetId = petId;
         PetName = petName;

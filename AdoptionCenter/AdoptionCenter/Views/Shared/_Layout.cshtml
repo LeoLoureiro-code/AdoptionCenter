@@ -6,18 +6,27 @@
     <title>@ViewData["Title"] - AdoptionCenterWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AdoptionCenterWebsite.styles.css" asp-append-version="true" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
 
+    <script type="text/javascript">
+        function openModal(modalId) {
+            $("#" + modalId).modal('show');
+        }
+
+        function closeModal(modalId) {
+            $("#" + modalId).modal('hide');
+        }
+    </script>
 </head>
 <body>
     <header m-0 p-0>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 rounded-bottom m-0 p-0">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class=" container-fluid navbar-div ">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PetLoveConnect</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +41,7 @@
                         <li class="nav-item me-lg-3">
                             <a class="nav-link font-weight-bold fw-bolder" asp-area="" asp-controller="About" asp-action="">About</a>
                         </li>
-                        <li class="nav-item me-lg-3">
+                        <li class="nav-item contact me-lg-3">
                             <a class="nav-link font-weight-bold fw-bolder" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
                         </li>
                     </ul>
@@ -40,10 +49,10 @@
             </div>
         </nav>
     </header>
-        <main role="main" class="m-0 p-0 h-100 w-100">
+        <main role="main" class="m-0 h-100 w-100">
             @RenderBody()
         </main>
-    <footer class=" footer text-muted bg-dark m-0 w-100">
+    <footer class=" footer text-muted bg-dark">
         <div class="container text-light">
             &copy; 2023 - PetLoveConnect 
         </div>

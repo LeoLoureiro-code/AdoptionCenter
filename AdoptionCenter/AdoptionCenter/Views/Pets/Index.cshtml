@@ -1,5 +1,5 @@
-﻿@model Pet
-@using AdoptionCenterWebsite.DataAccess.EF.Models
+﻿@model PetsViewModel;
+@using AdoptionCenter.DataAccess.EF.Models;
 
 @{ 
     ViewData["Title"] = "Pets Page";
@@ -11,62 +11,94 @@
     }
 
     function confirmDelete(id) {
-        $("#hdnDeleteAccountId").val(id);
+        $("#hdnDeletePetId").val(id);
         openModal("deleteModal");
     }
 
     function cancelDelete() {
-        $("#hdnDeleteAccountId").val(0);
+        $("#hdnDeletePetId").val(0);
         closeModal("deleteModal");
     }
 
-    function deleteAccount() {
-        var id = $("#hdnDeleteAccountId").val();
-        window.location.href = "/Banking/Delete/" + id;
+    function deletePet() {
+        var id = $("#hdnDeletePetId").val();
+        let email = document.getElementById('email');
+
+        if(email.value != ""){
+            window.location.href = "/Pets/Delete/" + id;
+        }
+        else{
+            email.style.border = "solid";
+            email.style.borderColor="red";
+            email.style.borderWidth = "1px;"
+            email.placeholder = "Email required";
+        }
+        
+        
     }
+
+    function AddImage(){
+        let imgNumber = Math.floor(Math.random() * 10);
+        let string = "/css/Assets/"+img+".jpg"
+        let img = document.getElementById('pet-image');
+
+        img.src = string;
+    }
+
 </script>
 
+<input type="hidden" id="hdnDeletePetId" value="0" />
+
+<h1 class="pets-h1">Your best friend is waiting for you!</h1>
+
+<button type="button" onclick="javascript:openLocation('/Pets/Update/0')" class="anchor-give">GIVE UP FOR ADOPTION</button>
+
 <div class="pets-div">
-    <h1 class="pets-h1">Your best friend is waiting for you</h1>
-
-
-
-    <button type="button" onclick="javascript:openLocation('/Pets/GiveUpForAdoption')" class="btn">Give up for adoption</button>
 
     <!-- Pet information-->
-    <div class="pet-div">
 
-        @foreach (Pet pet in ){
-        <div class="pet-img-div">
-            <img src="./css/Assets/dog3.jpg" class="pet-img"/>
+    @foreach(Pet pet in Model.PetsList){
+        <div class="pet-div">
+
+            <div class="pet-img-div">
+                <img src="./css/Assets/dog3.jpg" onload="AddImage()"  class="pet-img" id="pet-image"/>
+            </div>
+            <div class="pet-info">
+                <h2 class="pet-name">@pet.PetName</h2>
+                <ol class="pet-list">
+                    <li class="pet-list-item">
+                        <p class="pet-breed">@pet.PetBreed</p>
+                    </li>
+                    <li class="pet-list-item">
+                        <p class="pet-age">@pet.PetAge</p>
+                    </li>
+                    <li class="pet-list-item">
+                        <p class="pet-desc">@pet.PetDesc</p>
+                    </li>
+                </ol>
+                <div class="buttons-div">
+                    <button class="pet-btn" onclick="javascript:confirmDelete(@pet.PetId)">Adopt</button>
+                    <button class="pet-btn" onclick="javascript:openLocation('/Pets/Update/@pet.PetId')">Edit</button>
+                </div>
+            </div>
         </div>
-        
-        <div class="pet-info">
-            <h2 class="pet-name">PetName</h2>
-            <ol class="pet-list">
-                <li class="pet-list-item">
-                    <div class="pet-list-div">
-                        <p class="pet-name"></p>
-                    </div>
-                </li>
-                <li class="pet-list-item">
-                    <div class="pet-list-div">
-                        <p class="pet-breed"></p>
-                    </div>
-                </li>
-                <li class="pet-list-item">
-                    <div class="pet-list-div">
-                        <p class="pet-age"></p>
-                    </div>
-                </li>
-                <li class="pet-list-item">
-                    <div class="pet-list-div">
-                        <p class="pet-desc"></p>
-                    </div>
-                </li>
-            </ol>
-            <button>Adopt Me</button>
+    }
+</div>
+
+<div id="deleteModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-h1-div">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h5 class="modal-title ">One more step to meet your best friend</h5>
+            </div>
+            <div class="modal-body">
+                <p>Give us your email to send you the form</p>
+                <input type="email" placeholder="Email" id="email" class="contact-input input-update" required />
+                <div class="buttons-div-modal">
+                <button type="button" onclick="javascript:cancelDelete()" class="pet-btn pet-btn-modal">CANCEL</button>
+                    <button type="button" onclick="javascript:deletePet()" class="pet-btn pet-btn-modal">ADOPT</button>
+                </div>
+            </div>
         </div>
-        }
     </div>
 </div>
