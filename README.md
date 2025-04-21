@@ -12,7 +12,6 @@ A webpage developed in ASP.Net MVC to adopt pets and help animals to get a home.
 ## Authors
 
 Leonardo Loureiro  
-([https://twitter.com/dompizzie](https://github.com/LeoLoureiro-code))
 
 ## Version History
 
